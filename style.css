@@ -62,3 +62,22 @@ input {
     text-align: center;
     margin-bottom: 20px;
 }
+
+@media screen and (max-width:560px) {
+
+    .block {
+        height: 100%;
+    }
+
+    .buttons,
+    .inputs {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .btn,
+    input {
+
+        margin-bottom: 10px;
+    }
+}
