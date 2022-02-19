@@ -14,20 +14,34 @@ const result = document.querySelector(".result");
 
 
 
-let integer = 0;
+function Counter() {
+  let count = 0;
+
+  this.up = function () {
+    return ++count;
+  };
+
+  this.down = function () {
+    return --count;
+  };
+
+  this.reset = function () {
+    return (count = 0);
+  };
+}
+
+let counter = new Counter();
+
 decrease.addEventListener("click", function () {
-    integer -= 1;
-    num.innerHTML = integer;
+  num.innerHTML = counter.down();
 });
 
 increase.addEventListener("click", function () {
-    integer += 1;
-    num.innerHTML = integer;
+  num.innerHTML = counter.up();
 });
 
 reset.addEventListener("click", function () {
-    integer = 0;
-    num.innerHTML = integer;
+  num.innerHTML = counter.reset();
 });
 
 
